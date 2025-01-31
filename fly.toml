@@ -1,12 +1,17 @@
-app = "omniparser-app"
+# fly.toml app configuration file generated for omniparser-app-little-moon-5227 on 2025-01-31T16:31:30+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'omniparser-apper'
 primary_region = 'ord'
-swap_size_mb = 32768 # 32gb
+swap_size_mb = 32768
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  PORT = "8080"
+  PORT = '8080'
 
 [http_service]
   internal_port = 8080
@@ -14,7 +19,7 @@ swap_size_mb = 32768 # 32gb
   auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
   memory = '32gb'

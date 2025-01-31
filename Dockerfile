@@ -23,7 +23,7 @@ COPY . .
 RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/microsoft/OmniParser.git && \
     pip install -r OmniParser/requirements.txt && \
-    pip install huggingface-cli && \
+    pip install -U "huggingface_hub[cli]" && \
     huggingface-cli download microsoft/OmniParser --local-dir OmniParser/weights/ && \
     apt-get remove -y git && \
     apt-get autoremove -y && \
